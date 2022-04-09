@@ -37,12 +37,12 @@ public class DataLoader implements CommandLineRunner {
         cat.setName("cat");
         PetType savedCatType = petTypeService.save(cat);
 
-        Owner owner1 = new Owner();
-        owner1.setFirstName("Michael");
-        owner1.setLastName("Weston");
-        owner1.setAddress("123 Brickerel");
-        owner1.setCity("Miami");
-        owner1.setTelephone("1231231234");
+        Owner owner1 = Owner.builder()
+                .firstName("Michael")
+                .lastName("Weston")
+                .address("123 Brickerel")
+                .city("Miami")
+                .telephone("1231231234").build();
 
         Pet mikesPet = new Pet();
         mikesPet.setPetType(savedDogType);
@@ -53,12 +53,12 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner1);
 
-        Owner owner2 = new Owner();
-        owner2.setFirstName("Fiona");
-        owner2.setLastName("Glennane");
-        owner2.setAddress("123 Brickerel");
-        owner2.setCity("Miami");
-        owner2.setTelephone("1231231234");
+        Owner owner2 = Owner.builder()
+                .firstName("Fiona")
+                .lastName("Glennane")
+                .address("123 Brickerel")
+                .city("Miami")
+                .telephone("1231231234").build();
 
         Pet fionasPet = new Pet();
         fionasPet.setPetType(savedCatType);
